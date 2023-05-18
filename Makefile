@@ -6,7 +6,7 @@
 #    By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 18:25:12 by oscarmathot       #+#    #+#              #
-#    Updated: 2023/05/18 21:32:46 by oscarmathot      ###   ########.fr        #
+#    Updated: 2023/05/19 00:20:45 by oscarmathot      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 NAME 	:= push_swap
 SRC 	:= main.c stack.c push.c swap.c free_help.c rotate.c reverse_rotate.c hardsorts.c helpers.c \
-			radix.c index.c helpers_2.c printers.c sort5.c
+			radix.c index.c ft_atol.c printers.c sort5.c
 OBJ 	:= $(SRC:.c=.o)
 LIBFT_A	:= lib/libft/libft.a
 PRINTF_A := lib/printf/libftprintf.a
