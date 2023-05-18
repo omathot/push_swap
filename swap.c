@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:38:49 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/17 22:40:34 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:30:24 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	swap(t_stack *stack)
 
 	if (!stack)
 		exit_message("No stack in swap", NULL);
-	if(stack->size > 1)
+	if (stack->size > 1)
 	{
 		temp = pop(stack);
 		temp->next = stack->head->next;
@@ -26,7 +26,6 @@ void	swap(t_stack *stack)
 		stack->size += 1;
 		stack->head->pos = 1;
 		stack->head->next->pos = 2;
-		// adjust_index(stack);
 	}
 }
 

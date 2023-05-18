@@ -1,47 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   printers.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 13:26:08 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:31:25 by oscarmathot      ###   ########.fr       */
+/*   Created: 2023/05/18 20:27:57 by oscarmathot       #+#    #+#             */
+/*   Updated: 2023/05/18 20:28:21 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_stack(t_stack *dest, t_stack *src)
+void	print_element(t_element	*elem)
 {
-	t_element	*temp;
-	int			i;
+	ft_printf("num is : %i\n", elem->num);
+}
 
-	i = 1;
-	if (!src && src->size > 0)
+void	print_stack(t_stack	*stack)
+{
+	int		i;
+
+	i = 0;
+	while (i < stack->size)
 	{
-		free_list(src);
-		exit_message("Error in push_stack", dest);
-	}
-	push(dest, pop(src));
-	temp = dest->head;
-	while (i < dest->size + 1)
-	{
-		temp->pos = i;
-		temp = temp->next;
+		print_element(view(stack, i + 1));
 		i++;
 	}
+	ft_printf("\n");
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	print_elem_pos(t_element	*elem)
 {
-	push_stack(a, b);
-	ft_printf("pa\n");
+	ft_printf("pos is : %i\n", elem->pos);
 }
 
-void	pb(t_stack *a, t_stack *b)
+void	print_pos(t_stack	*stack)
 {
-	push_stack(b, a);
-	b->head->pos = -1;
-	ft_printf("pb\n");
+	int		i;
+
+	i = 0;
+	while (i < stack->size)
+	{
+		print_elem_pos(view(stack, i + 1));
+		i++;
+	}
+	ft_printf("\n");
 }

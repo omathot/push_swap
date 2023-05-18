@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 11:36:10 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/12 12:35:10 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:25:37 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 void	index_numbers(t_stack *stack)
 {
-    int			i;
-    int			current_min;
-    t_element	*next_min;
+	int			i;
+	int			current_min;
+	t_element	*next_min;
 
 	i = 0;
 	current_min = INT_MIN;
-	while ((next_min = get_next_min(stack, current_min)) != NULL)
+	next_min = get_next_min(stack, current_min);
+	while (next_min != NULL)
 	{
 		next_min->index = i++;
 		current_min = next_min->num;
+		next_min = get_next_min(stack, current_min);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:20 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 01:08:30 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:33:08 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,6 @@ void		radix_sort(t_stack *stack_a, t_stack *stack_b);
 //////////////////////////////////
 int			get_max(t_stack *stack);
 int			get_digit(int num, int exp);
-t_stack		*create_stack(void);
 int			a_is_sorted(t_stack *stack);
 t_element	*get_next_min(t_stack *stack, int current_min);
 int			get_max_idx(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 10:57:42 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 14:19:11 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:18:04 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ void	sort_5(t_stack *stack, t_stack *stack_b)
 		pb(stack, stack_b);
 		i++;
 	}
-	// print_stack(stack);
 	sort_3(stack);
 	pa(stack, stack_b);
 	pa(stack, stack_b);

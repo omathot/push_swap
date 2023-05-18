@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:53:18 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 01:53:49 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:33:03 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,6 @@ int	get_max(t_stack *stack)
 int	get_digit(int num, int exp)
 {
 	return ((num / exp) % 10);
-}
-
-t_stack	*create_stack(void)
-{
-	t_stack	*new_stack;
-
-	new_stack = (t_stack *)malloc(sizeof(t_stack));
-	new_stack->head = NULL;
-	new_stack->size = 0;
-	return (new_stack);
 }
 
 int	a_is_sorted(t_stack *stack)
@@ -69,7 +59,8 @@ t_element	*get_next_min(t_stack *stack, int current_min)
 	next_min = NULL;
 	while (temp)
 	{
-		if (temp->index == -1 && (next_min == NULL || temp->num < next_min->num) && temp->num > current_min)
+		if (temp->index == -1 && (next_min == NULL || temp->num < next_min->num)
+			&& temp->num > current_min)
 			next_min = temp;
 		temp = temp->next;
 	}

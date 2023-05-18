@@ -6,21 +6,21 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 18:08:50 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:33:23 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	f(void)
-{
-	system("leaks push_swap -q --list");
-}
+// void	f(void)
+// {
+// 	system("leaks push_swap -q --list");
+// }
 
 int	main(int argc, char *argv[])
 {
 	t_stack		*stack_a;
-	t_stack 	*stack_b;
+	t_stack		*stack_b;
 
 	// atexit(f);
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
@@ -40,8 +40,8 @@ int	main(int argc, char *argv[])
 		else
 			radix_sort(stack_a, stack_b);
 	}
-	// print_stack(stack_a);
-	// print_pos(stack_a);
+	print_stack(stack_a);
+	print_pos(stack_a);
 	free_list(stack_a);
 	free(stack_b);
 	return (0);
@@ -58,7 +58,7 @@ void	dup_check(int argc, char *argv[])
 		j = i + 1;
 		while (j < argc)
 		{
-            if (strcmp(argv[i], argv[j]) == 0)
+			if (strcmp(argv[i], argv[j]) == 0)
 			{
 				ft_printf("Error\nDuplicates found\n");
 				exit(EXIT_FAILURE);
@@ -111,7 +111,7 @@ void	prep_stacks(t_stack *stack, int argc, char **argv)
 		temp = (t_element *)malloc(sizeof(t_element));
 		temp->num = ft_atoi(argv[i]);
 		temp->index = -1;
-		temp->pos = i;															// ATTEMPT NUMBER 1 BABY
+		temp->pos = i;
 		add(stack, temp);
 		i++;
 	}
@@ -130,20 +130,4 @@ void	hardsorts(int argc, t_stack *stack_a, t_stack *stack_b)
 		sort_3(stack_a);
 	if (argc == 6)
 		sort_5(stack_a, stack_b);
-}
-
-void	limit_check(t_stack *stack)
-{
-	t_element	*temp;
-
-	temp = stack->head;
-	while (temp->next)
-	{
-		if (temp->num > 2147483647)
-		{
-			ft_printf("Error\ninput higher than int max found\n");
-			exit(EXIT_FAILURE);
-		}
-		temp = temp->next;
-	}
 }

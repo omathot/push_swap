@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 00:24:36 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/17 22:51:30 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:26:09 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ void	rotate(t_stack *stack)
 		start = start->next;
 		i++;
 	}
-	// stack->head->pos = 1;
-	// view(stack, stack->size)->pos = stack->size;
-	// adjust_index(stack);
 }
 
 void	ra(t_stack *stack_a)

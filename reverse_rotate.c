@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 00:32:57 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/17 22:47:00 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:25:57 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	reverse_r(t_stack *stack)
 		temp = temp->next;
 		i++;
 	}
-	// adjust_index(stack);
 }
 
 void	rra(t_stack *stack_a)

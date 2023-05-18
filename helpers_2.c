@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 01:01:01 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 01:10:02 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 20:25:10 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ long	ft_atol(const char *str)
 	i = 0;
 	n = 0;
 	multi = 1;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' ||\
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || \
 			str[i] == '\r' || str[i] == '\f' || str[i] == ' ')
 		i++;
 	if (str[i] == '-')
@@ -37,4 +37,20 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (n * multi);
+}
+
+void	limit_check(t_stack *stack)
+{
+	t_element	*temp;
+
+	temp = stack->head;
+	while (temp->next)
+	{
+		if (temp->num > 2147483647)
+		{
+			ft_printf("Error\ninput higher than int max found\n");
+			exit(EXIT_FAILURE);
+		}
+		temp = temp->next;
+	}
 }
