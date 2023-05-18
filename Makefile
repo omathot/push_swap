@@ -6,7 +6,7 @@
 #    By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 18:25:12 by oscarmathot       #+#    #+#              #
-#    Updated: 2023/05/19 00:20:45 by oscarmathot      ###   ########.fr        #
+#    Updated: 2023/05/19 00:49:06 by oscarmathot      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ RESET	:= \033[0m
 
 all	: $(NAME)
 		@echo "$(GREEN)Project built successfully !$(RESET)"
-		@echo "$(BLUE)Usage: push_swap <numbers>$(RESET)"
+		@echo "$(YELLOW)Usage: push_swap <numbers>$(RESET)"
 
 $(NAME) : $(OBJ) $(LIBFT_A) $(PRINTF_A) push_swap.h
 		@echo "$(CYAN)Creating the executable...$(RESET)"
@@ -59,7 +59,7 @@ $(NAME) : $(OBJ) $(LIBFT_A) $(PRINTF_A) push_swap.h
 
 $(LIBFT_A) : 
 		@echo "$(BLUE)Building libft library...$(RESET)\n"
-		$(call prettycomp, @make -C lib/libft)
+		$(call prettycomp, make -C lib/libft)
 
 $(PRINTF_A) :
 		@echo "$(BLUE)Building ft_printf library...$(RESET)\n"
@@ -75,10 +75,10 @@ fclean :
 
 hardclean : 
 		@make fclean
-		cd ./lib/libft && make clean
-		cd ./lib/libft && make fclean
-		cd ./lib/printf && make clean
-		cd ./lib/printf && make fclean
+		@cd ./lib/libft && make clean
+		@cd ./lib/libft && make fclean
+		@cd ./lib/printf && make clean
+		@cd ./lib/printf && make fclean
 		@echo "$(MAGENTA)Cleaned up all built files!$(RESET)"
 
 re : fclean all

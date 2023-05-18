@@ -6,7 +6,7 @@
 #    By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/06 10:51:47 by omathot           #+#    #+#              #
-#    Updated: 2023/04/19 00:10:38 by oscarmathot      ###   ########.fr        #
+#    Updated: 2023/05/19 00:37:45 by oscarmathot      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,10 @@ bonus: $(OBJ_BONUS) $(OBJ)
 	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 
 clean:
-	rm -f $(OBJ) $(OBJ_BONUS)
+	@rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

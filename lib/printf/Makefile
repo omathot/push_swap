@@ -6,7 +6,7 @@
 #    By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 23:06:58 by oscarmathot       #+#    #+#              #
-#    Updated: 2023/04/19 00:10:14 by oscarmathot      ###   ########.fr        #
+#    Updated: 2023/05/19 00:46:17 by oscarmathot      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,16 +27,16 @@ FLAGS = -Werror -Wall -Wextra -I
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-		@ar rc $@ $^
+	@ar rc $@ $^
 
 ft_%.o: ft_%.c
-	$(call prettycomp, $(CMP) $(FLAGS) ft_printf.h -c $^)
+	@$(call prettycomp, $(CMP) $(FLAGS) ft_printf.h -c $^)
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re : fclean all
 
