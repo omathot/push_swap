@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 21:41:12 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/19 00:17:48 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ void	prep_stacks(t_stack *stack, int argc, char **argv)
 		add(stack, temp);
 		i++;
 	}
-	limit_check(stack);
 	index_numbers(stack);
 }
 

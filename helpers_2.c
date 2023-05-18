@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 01:01:01 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:25:10 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/19 00:16:43 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,4 @@ long	ft_atol(const char *str)
 		i++;
 	}
 	return (n * multi);
-}
-
-void	limit_check(t_stack *stack)
-{
-	t_element	*temp;
-
-	temp = stack->head;
-	while (temp->next)
-	{
-		if (temp->num > 2147483647)
-		{
-			ft_printf("Error\ninput higher than int max found\n");
-			exit(EXIT_FAILURE);
-		}
-		temp = temp->next;
-	}
 }
