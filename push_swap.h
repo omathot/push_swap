@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:20 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:33:08 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 21:36:50 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_element
 {
 	int					num;
 	int					index;
-	int					pos;										// you are stupid you fuck, of course you need this
+	int					pos;
 	struct s_element	*next;
 }	t_element;
 
@@ -84,7 +84,6 @@ void		sort_3(t_stack *stack);
 void		sort_5(t_stack *stack, t_stack *stack_b);
 void		radix_sort(t_stack *stack_a, t_stack *stack_b);
 
-
 //
 //////////////////////////////////
 //			Helpers				//
@@ -99,7 +98,11 @@ void		num_check(char *argv[]);
 void		adjust_index(t_stack *stack);
 void		limit_check(t_stack *stack);
 long		ft_atol(const char *str);
-
+void		move_to_b(t_stack *stack_a, t_stack *stack_b);
+void		adjust_smallest(t_element *temp, t_element **min_elem,
+				int *min_index);
+t_element	*find_min(t_stack *stack);
+void		rotate_to_element(t_stack *stack, t_element *element);
 
 //
 //////////////////////////////////
@@ -109,8 +112,6 @@ void		print_stack(t_stack	*stack);
 void		print_element(t_element	*elem);
 void		print_pos(t_stack *stack);
 void		print_elem_pos(t_element *elem);
-
-
 
 //
 //////////////////////////////////

@@ -6,23 +6,17 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:33:23 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 21:41:12 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	f(void)
-// {
-// 	system("leaks push_swap -q --list");
-// }
 
 int	main(int argc, char *argv[])
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
 
-	// atexit(f);
 	stack_a = (t_stack *)malloc(sizeof(t_stack));
 	stack_b = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack_a || !stack_b)
@@ -40,8 +34,6 @@ int	main(int argc, char *argv[])
 		else
 			radix_sort(stack_a, stack_b);
 	}
-	print_stack(stack_a);
-	print_pos(stack_a);
 	free_list(stack_a);
 	free(stack_b);
 	return (0);

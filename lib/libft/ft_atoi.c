@@ -6,10 +6,11 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:46:51 by omathot           #+#    #+#             */
-/*   Updated: 2023/04/24 13:21:49 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/18 21:40:33 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
