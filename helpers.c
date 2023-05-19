@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/05 15:53:18 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:33:03 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/20 00:41:08 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,15 @@ t_element	*get_next_min(t_stack *stack, int current_min)
 		temp = temp->next;
 	}
 	return (next_min);
+}
+
+void	go_sort(t_stack *stack_a, t_stack *stack_b, int argc)
+{
+	if (a_is_sorted(stack_a) == 1)
+	{
+		if (argc > 1 && argc <= 6 && argc != 5)
+			hardsorts(argc, stack_a, stack_b);
+		else
+			radix_sort(stack_a, stack_b);
+	}	
 }

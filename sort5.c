@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort5.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
+/*   By: omathot <omathot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 21:32:08 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 21:47:59 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/19 13:33:10 by omathot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_element	*find_min(t_stack *stack)
 
 void	rotate_to_element(t_stack *stack, t_element *element)
 {
-	while (stack->head != element)
+	while (stack->head->index != element->index)
 	{
 		if (element->pos < stack->size / 2)
 			ra(stack);

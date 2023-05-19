@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:20 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 21:36:50 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/20 00:36:06 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_stack
 int			main(int argc, char *argv[]);
 void		prep_stacks(t_stack *stack_a, int argc, char **argv);
 void		hardsorts(int argc, t_stack *stack_a, t_stack *stack_b);
+void		go_sort(t_stack *stack_a, t_stack *stack_b, int argc);
 
 //
 //////////////////////////////////
@@ -103,6 +104,8 @@ void		adjust_smallest(t_element *temp, t_element **min_elem,
 				int *min_index);
 t_element	*find_min(t_stack *stack);
 void		rotate_to_element(t_stack *stack, t_element *element);
+int			ft_atoi_overflow(const char *str);
+void		atoi_iterate(const char *str, long *res);
 
 //
 //////////////////////////////////

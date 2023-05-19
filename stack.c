@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
+/*   By: omathot <omathot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 16:22:20 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/18 20:29:17 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/19 13:49:01 by omathot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,12 @@ void	add(t_stack *stack, t_element *new_elem)
 	t_element	*current;
 
 	if (stack->head == NULL)
-	{
-		new_elem->next = NULL;
 		stack->head = new_elem;
-	}
 	else
 	{
 		current = stack->head;
 		while (current->next != NULL)
 			current = current->next;
-		new_elem->next = NULL;
 		current->next = new_elem;
 	}
 	stack->size += 1;

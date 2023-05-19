@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/19 00:17:48 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/20 00:40:51 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,18 @@ int	main(int argc, char *argv[])
 	if (!stack_a || !stack_b)
 	{
 		ft_printf("Error original malloc\n");
-		exit(EXIT_SUCCESS);
+		exit(EXIT_FAILURE);
 	}
+	stack_a->head = NULL;
+	stack_b->head = NULL;
+	stack_a->size = 0;
+	stack_b->size = 0;
 	if (argc == 1)
 		exit(EXIT_FAILURE);
 	prep_stacks(stack_a, argc, argv);
-	if (a_is_sorted(stack_a) == 1)
-	{
-		if (argc <= 6 && argc != 5)
-			hardsorts(argc, stack_a, stack_b);
-		else
-			radix_sort(stack_a, stack_b);
-	}
+	go_sort(stack_a, stack_b, argc);
 	free_list(stack_a);
-	free(stack_b);
+	free_list(stack_b);
 	return (0);
 }
 
@@ -101,9 +99,12 @@ void	prep_stacks(t_stack *stack, int argc, char **argv)
 	while (i < argc)
 	{
 		temp = (t_element *)malloc(sizeof(t_element));
-		temp->num = ft_atoi(argv[i]);
+		if (!temp)
+			exit (EXIT_FAILURE);
+		temp->num = ft_atoi_overflow(argv[i]);
 		temp->index = -1;
 		temp->pos = i;
+		temp->next = NULL;
 		add(stack, temp);
 		i++;
 	}
