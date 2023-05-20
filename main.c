@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/20 00:40:51 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/20 11:03:53 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,11 @@ void	num_check(char *argv[])
 {
 	int		y;
 	int		x;
-	long	n;
 
 	y = 1;
 	while (argv[y])
 	{
 		x = 0;
-		n = ft_atol(argv[y]);
-		if (n > INT32_MAX || n < INT32_MIN)
-		{
-			ft_printf("Error\nhigher/lower input than int max found\n");
-			exit(EXIT_FAILURE);
-		}
 		while (argv[y][x])
 		{
 			if (!(48 <= argv[y][x] && argv[y][x] <= 57) && argv[y][x] != 45)
