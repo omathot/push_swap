@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+         #
+#    By: omathot <omathot@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/23 18:25:12 by oscarmathot       #+#    #+#              #
-#    Updated: 2023/05/20 00:18:27 by oscarmathot      ###   ########.fr        #
+#    Updated: 2023/05/29 12:19:02 by omathot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ all	: $(NAME)
 
 $(NAME) : $(OBJ) $(LIBFT_A) $(PRINTF_A) push_swap.h
 		@echo "$(CYAN)Creating the executable...$(RESET)"
-		@$(CC) $(FLAGS) $(OBJ) $(LIBFT_A) $(PRINTF_A) -fsanitize=address -o $(NAME)
+		@$(CC) $(FLAGS) $(OBJ) $(LIBFT_A) $(PRINTF_A) -o $(NAME)
 
 %.o : %.c push_swap.h
 		@echo "$(CYAN)Compiling...$(RESET) $<"

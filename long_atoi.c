@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 00:17:48 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/20 00:20:58 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/26 11:53:36 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	atoi_iterate(const char *str, long *res)
 			if (*res > INT_MAX / 10 || \
 				(*res == INT_MAX / 10 && *str - '0' > INT_MAX % 10))
 			{
-				ft_printf("Error\nInvalid input\n");
+				ft_printf("Error\n");
 				exit(EXIT_FAILURE);
 			}
 			*res = *res * 10 + *str - '0';

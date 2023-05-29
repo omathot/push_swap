@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
+/*   By: omathot <omathot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/20 11:03:53 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/29 14:25:37 by omathot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int argc, char *argv[])
 	stack_a->size = 0;
 	stack_b->size = 0;
 	if (argc == 1)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	prep_stacks(stack_a, argc, argv);
 	go_sort(stack_a, stack_b, argc);
 	free_list(stack_a);
@@ -50,7 +50,7 @@ void	dup_check(int argc, char *argv[])
 		{
 			if (strcmp(argv[i], argv[j]) == 0)
 			{
-				ft_printf("Error\nDuplicates found\n");
+				ft_printf("Error\n");
 				exit(EXIT_FAILURE);
 			}
 			j++;
@@ -63,16 +63,15 @@ void	num_check(char *argv[])
 {
 	int		y;
 	int		x;
-
+	
 	y = 1;
 	while (argv[y])
 	{
-		x = 0;
 		while (argv[y][x])
 		{
 			if (!(48 <= argv[y][x] && argv[y][x] <= 57) && argv[y][x] != 45)
 			{
-				ft_printf("Error\nNon numerical characters found\n");
+				ft_printf("Error\n");
 				exit(EXIT_FAILURE);
 			}
 			x++;
