@@ -6,14 +6,13 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:20 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/20 00:36:06 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/30 20:17:44 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <string.h>
 
 # include <stdlib.h>
@@ -105,7 +104,7 @@ void		adjust_smallest(t_element *temp, t_element **min_elem,
 t_element	*find_min(t_stack *stack);
 void		rotate_to_element(t_stack *stack, t_element *element);
 int			ft_atoi_overflow(const char *str);
-void		atoi_iterate(const char *str, long *res);
+void		atoi_iterate(const char *str, long *res, int sign);
 
 //
 //////////////////////////////////

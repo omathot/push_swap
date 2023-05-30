@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/20 00:17:48 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/26 11:53:36 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/30 20:16:17 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	ft_atoi_overflow(const char *str)
 		sign = -1;
 	if (*str == '+' || *str == '-')
 		str++;
-	atoi_iterate(str, &res);
+	atoi_iterate(str, &res, sign);
 	return (sign * res);
 }
 
-void	atoi_iterate(const char *str, long *res)
+void	atoi_iterate(const char *str, long *res, int sign)
 {
 	int	i;
 
@@ -38,8 +38,14 @@ void	atoi_iterate(const char *str, long *res)
 	{
 		if (*str >= '0' && *str <= '9')
 		{
-			if (*res > INT_MAX / 10 || \
-				(*res == INT_MAX / 10 && *str - '0' > INT_MAX % 10))
+			if (sign > 0 && (*res > INT_MAX / 10 || \
+				(*res == INT_MAX / 10 && *str - '0' > INT_MAX % 10)))
+			{
+				ft_printf("Error\n");
+				exit(EXIT_FAILURE);
+			}
+			if (sign < 0 && (-*res < INT_MIN / 10 || \
+				(-*res == INT_MIN / 10 && - *str + '0' < INT_MIN % 10)))
 			{
 				ft_printf("Error\n");
 				exit(EXIT_FAILURE);

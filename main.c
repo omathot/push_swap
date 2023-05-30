@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omathot <omathot@student.42.fr>            +#+  +:+       +#+        */
+/*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 18:25:03 by oscarmathot       #+#    #+#             */
-/*   Updated: 2023/05/29 14:25:37 by omathot          ###   ########.fr       */
+/*   Updated: 2023/05/30 20:20:45 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	dup_check(int argc, char *argv[])
 		j = i + 1;
 		while (j < argc)
 		{
-			if (strcmp(argv[i], argv[j]) == 0)
+			if (ft_strcmp(argv[i], argv[j]) == 0)
 			{
 				ft_printf("Error\n");
 				exit(EXIT_FAILURE);
@@ -63,10 +63,11 @@ void	num_check(char *argv[])
 {
 	int		y;
 	int		x;
-	
+
 	y = 1;
 	while (argv[y])
 	{
+		x = 0;
 		while (argv[y][x])
 		{
 			if (!(48 <= argv[y][x] && argv[y][x] <= 57) && argv[y][x] != 45)

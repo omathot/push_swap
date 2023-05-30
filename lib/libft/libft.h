@@ -6,7 +6,7 @@
 /*   By: oscarmathot <oscarmathot@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:16:27 by omathot           #+#    #+#             */
-/*   Updated: 2023/04/23 18:42:29 by oscarmathot      ###   ########.fr       */
+/*   Updated: 2023/05/30 20:21:25 by oscarmathot      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ char	*ft_strchr2(char *str, int c);
 void	free_array(char **array);
 char	*strjoin_free(char *s1, char *s2);
 void	*ft_realloc(void *ptr, size_t size);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
